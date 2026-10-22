@@ -7,8 +7,8 @@
   "panel_dark": "#55524D",
   "border_light": "#B0ACA5",
   "border_dark": "#2E2C29",
-  "helm": "#E4E4E0",
-  "helm_shade": "#8A8A86",
-  "logo_type": "file",
-  "logo": "helm"
+  "icon": "helm",
+  "logo_1": "#E4E4E0",
+  "logo_2": "#8A8A86",
+  "logo_3": "#E4E4E0"
 }

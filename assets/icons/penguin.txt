@@ -1,0 +1,14 @@
+# Penguin (Normal mode). One character per pixel:
+#   .  transparent   A  logo_1 (body)   B  logo_2 (face)   C  logo_3 (beak)
+....AAAA....
+..AAAAAAAA..
+.AAAAAAAAAA.
+.AAAAAAABBA.
+AAAAAABBABA.
+AAAAABBBBBCC
+AAAAABBBBBCC
+AAAAABBBBB..
+AAAAAABBBA..
+.AAAAAABBA..
+.AAAAAAAAA..
+..AAAAAAA...

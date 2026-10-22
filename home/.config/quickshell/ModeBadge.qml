@@ -13,13 +13,9 @@ StoneFrame {
         anchors.centerIn: parent
         spacing: 6
 
-        Rectangle {
-            width: 10
-            height: 10
+        ModeIcon {
+            pixel: 2
             anchors.verticalCenter: parent.verticalCenter
-            color: Theme.helm
-            border.color: Theme.borderDark
-            border.width: 1
         }
         ShadowText {
             id: label

@@ -2,11 +2,12 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "type": "{{logo_type}}",
+    "type": "file",
     "source": "{{logo_path}}",
     "color": {
-      "1": "{{helm_ansi}}",
-      "2": "{{helm_shade_ansi}}"
+      "1": "{{logo_1_ansi}}",
+      "2": "{{logo_2_ansi}}",
+      "3": "{{logo_3_ansi}}"
     },
     "padding": { "top": 1, "right": 3 }
   },
@@ -19,7 +20,7 @@
   },
   "modules": [
     "title",
-    { "type": "custom", "format": "\u001b[1;{{helm_ansi}}m{{tagline}}\u001b[0m" },
+    { "type": "custom", "format": "\u001b[1;{{accent_ansi}}m{{tagline}}\u001b[0m" },
     { "type": "custom", "format": "\u001b[{{text_ansi}}m{{name}}\u001b[0m" },
     "break",
     "os",

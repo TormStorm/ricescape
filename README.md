@@ -82,8 +82,9 @@ never touched.
 | Hardcore Group Ironman | `hcgim` | Bright red |
 
 Switching a mode recolours Niri's borders, the Quickshell bar, kitty (live),
-mako, fuzzel, swaylock, GTK apps, the wallpaper and fastfetch, which draws an
-Ironman helm in your mode's colour. Because you use Arch, btw.
+mako, fuzzel, swaylock, GTK apps, the wallpaper and fastfetch. Normal mode
+gets an OSRS-style penguin; every Ironman mode gets the helm in its own colour,
+in fastfetch and on the bar's mode badge. Because you use Arch, btw.
 
 ## Keybinds
 
@@ -110,13 +111,17 @@ packages/           pacman.txt and aur.txt
 palettes/           _base.json plus one JSON palette per mode
 templates/          Themed configs, rendered into $HOME by `ropes mode`
 home/               Static configs, linked into $HOME with GNU Stow
-assets/             Fastfetch logos, NPC chatheads (to come)
+assets/icons/       Pixel sprites (penguin, helm) used by fastfetch and the bar
 wallpapers/         Optional <mode>.png wallpapers (solid colour otherwise)
 ```
 
 Templates use `{{key}}` placeholders filled from the merged palette. Every
 colour is also available as `{{key_hex}}` (no `#`), `{{key_rgb}}` (`r;g;b`) and
 `{{key_ansi}}` (a truecolour escape). State lives in `~/.local/state/ricescape`.
+
+Mode icons are plain-text pixel sprites in `assets/icons/`: one character per
+pixel, `A`/`B`/`C` coloured by the palette's `logo_1`/`logo_2`/`logo_3`. The
+same file is drawn by the bar and turned into the fastfetch logo.
 
 Your own wallpapers go in `~/.config/ricescape/wallpapers/<mode>.png`.
 

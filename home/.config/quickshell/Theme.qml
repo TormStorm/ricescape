@@ -17,7 +17,13 @@ Singleton {
     property color panelDark: "#2B241C"
     property color borderLight: "#6B5E49"
     property color borderDark: "#1A1610"
-    property color helm: "#C9A227"
+
+    // Mode icon: a pixel sprite (penguin for Normal, helm for Ironman modes).
+    property string icon: "penguin"
+    property string iconPath: ""
+    property color logo1: "#505050"
+    property color logo2: "#F2F2F2"
+    property color logo3: "#F08A1C"
 
     property color text: "#FFFF00"
     property color textShadow: "#000000"
@@ -58,7 +64,11 @@ Singleton {
         set("panelDark", "panel_dark");
         set("borderLight", "border_light");
         set("borderDark", "border_dark");
-        set("helm", "helm");
+        set("icon", "icon");
+        set("iconPath", "icon_path");
+        set("logo1", "logo_1");
+        set("logo2", "logo_2");
+        set("logo3", "logo_3");
         set("text", "text");
         set("textShadow", "text_shadow");
         set("textAlt", "text_alt");

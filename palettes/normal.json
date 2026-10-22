@@ -7,8 +7,8 @@
   "panel_dark": "#2B241C",
   "border_light": "#6B5E49",
   "border_dark": "#1A1610",
-  "helm": "#C9A227",
-  "helm_shade": "#7A6216",
-  "logo_type": "builtin",
-  "logo": "arch"
+  "icon": "penguin",
+  "logo_1": "#505050",
+  "logo_2": "#F2F2F2",
+  "logo_3": "#F08A1C"
 }

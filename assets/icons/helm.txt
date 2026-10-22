@@ -1,0 +1,14 @@
+# Ironman helm (all Ironman modes). One character per pixel:
+#   .  transparent   A  logo_1 (metal)   B  logo_2 (visor/shade)   C  logo_3
+...AAAAAA...
+.AAAAAAAAAA.
+AAAAAAAAAAAA
+AAAAAAAAAAAA
+ABBBBBBBBBBA
+AAAAAAAAAAAA
+AAAABBBBAAAA
+AAA.AAAA.AAA
+AAA.AAAA.AAA
+.AA.AAAA.AA.
+..A.AAAA.A..
+....AAAA....
