@@ -1,0 +1,14 @@
+{
+  "mode": "normal",
+  "name": "Normal",
+  "bg": "#121212",
+  "accent": "#C9A227",
+  "panel": "#3E3529",
+  "panel_dark": "#2B241C",
+  "border_light": "#6B5E49",
+  "border_dark": "#1A1610",
+  "helm": "#C9A227",
+  "helm_shade": "#7A6216",
+  "logo_type": "builtin",
+  "logo": "arch"
+}

@@ -1,0 +1,14 @@
+{
+  "mode": "ultimate",
+  "name": "Ultimate Ironman",
+  "bg": "#9A9A96",
+  "accent": "#D6D6D2",
+  "panel": "#6E6A64",
+  "panel_dark": "#55524D",
+  "border_light": "#B0ACA5",
+  "border_dark": "#2E2C29",
+  "helm": "#E4E4E0",
+  "helm_shade": "#8A8A86",
+  "logo_type": "file",
+  "logo": "helm"
+}

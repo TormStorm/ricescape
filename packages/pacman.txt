@@ -1,0 +1,45 @@
+# Official repository packages, installed by the Survival Expert.
+# One package per line; comments start with #.
+
+# Compositor and session
+niri
+xwayland-satellite
+xdg-desktop-portal-gnome
+xdg-desktop-portal-gtk
+polkit-gnome
+gnome-keyring
+xdg-user-dirs
+
+# Interface
+quickshell          # bar, orbs, minimap (and later the whole HUD)
+kitty               # terminal
+fuzzel              # launcher (until the inventory launcher is built)
+mako                # notifications (until XP drops are built)
+awww                # wallpaper daemon (formerly swww)
+swaylock            # lock screen (until the Bank PIN lock is built)
+swayidle
+fastfetch
+
+# Installer and theming tools
+gum
+chafa
+jq
+stow
+git
+
+# Audio, network, hardware
+pipewire
+pipewire-pulse
+wireplumber
+pavucontrol
+networkmanager
+bluez
+bluez-utils
+brightnessctl
+playerctl
+wl-clipboard
+
+# Fonts
+ttf-jetbrains-mono-nerd
+noto-fonts
+noto-fonts-emoji

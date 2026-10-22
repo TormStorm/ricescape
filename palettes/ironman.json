@@ -1,0 +1,14 @@
+{
+  "mode": "ironman",
+  "name": "Ironman",
+  "bg": "#3C3C3C",
+  "accent": "#9A9A9A",
+  "panel": "#4A4540",
+  "panel_dark": "#34302C",
+  "border_light": "#77706A",
+  "border_dark": "#1E1C1A",
+  "helm": "#9A9A9A",
+  "helm_shade": "#4A4A4A",
+  "logo_type": "file",
+  "logo": "helm"
+}

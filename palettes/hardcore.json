@@ -1,0 +1,14 @@
+{
+  "mode": "hardcore",
+  "name": "Hardcore Ironman",
+  "bg": "#4A0E0E",
+  "accent": "#8B1A1A",
+  "panel": "#3E2A26",
+  "panel_dark": "#2C1C1A",
+  "border_light": "#6E4A44",
+  "border_dark": "#1A0E0C",
+  "helm": "#B22222",
+  "helm_shade": "#5A1010",
+  "logo_type": "file",
+  "logo": "helm"
+}

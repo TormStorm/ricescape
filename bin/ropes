@@ -1,0 +1,103 @@
+#!/usr/bin/env bash
+# ropes — install, update and switch modes for Ricescape.
+set -Eeuo pipefail
+
+RS_REPO="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)"
+export RS_REPO
+
+# shellcheck source=../lib/common.sh
+source "$RS_REPO/lib/common.sh"
+# shellcheck source=../lib/dialogue.sh
+source "$RS_REPO/lib/dialogue.sh"
+# shellcheck source=../lib/theme.sh
+source "$RS_REPO/lib/theme.sh"
+# shellcheck source=../lib/install.sh
+source "$RS_REPO/lib/install.sh"
+# shellcheck source=../lib/uninstall.sh
+source "$RS_REPO/lib/uninstall.sh"
+
+usage() {
+    cat <<EOF
+ropes — Learning the Ropes for Ricescape
+
+Usage:
+  ropes                     Run the installer (Learning the Ropes)
+  ropes install             Same as above
+  ropes update              Pull the latest version, update packages, re-apply
+  ropes uninstall           Remove Ricescape and restore your previous configs
+  ropes mode                Talk to the Ironman tutor to pick a mode
+  ropes mode <mode>         Switch mode directly
+  ropes mode --next         Cycle to the next mode
+  ropes apply               Re-apply the current mode (after adding fonts etc.)
+  ropes status              Show the current mode
+  ropes logout              Open the logout panel
+  ropes help                Show this help
+
+Options:
+  --skip-dialogue           Skip the NPCs and use defaults
+
+Modes:
+  normal, ironman (im), ultimate (uim), hardcore (hcim),
+  group (gim), unranked (ugim), hardcore-group (hcgim)
+EOF
+}
+
+cmd_mode() {
+    local arg="${1:-}" mode
+    case "$arg" in
+        "")
+            if dlg_interactive; then
+                mode="$(choose_mode_dialogue)"
+            else
+                die "Which mode? Run 'ropes mode <mode>', or 'ropes help' for the list."
+            fi
+            ;;
+        --next) mode="$(next_mode)" ;;
+        *) mode="$(resolve_mode "$arg")" || die "There's no mode called '$arg'. Try: ${RS_MODES[*]}" ;;
+    esac
+    apply_mode "$mode"
+}
+
+cmd_logout() {
+    have fuzzel || die "fuzzel is not installed."
+    local choice
+    choice="$(printf '%s\n' "Lock" "Log out" "Reboot" "Shut down" \
+        | fuzzel --dmenu --prompt "Logout: " --lines 4)" || exit 0
+    case "$choice" in
+        Lock)        swaylock -f ;;
+        "Log out")   niri msg action quit --skip-confirmation ;;
+        Reboot)      systemctl reboot ;;
+        "Shut down") systemctl poweroff ;;
+    esac
+}
+
+main() {
+    local args=() a
+    for a in "$@"; do
+        case "$a" in
+            --skip-dialogue) RS_SKIP_DIALOGUE=1 ;;
+            -h | --help) usage; exit 0 ;;
+            *) args+=("$a") ;;
+        esac
+    done
+    set -- "${args[@]+"${args[@]}"}"
+
+    local cmd="${1:-install}"
+    shift || true
+    case "$cmd" in
+        install) run_install ;;
+        update)  run_update ;;
+        uninstall | remove) run_uninstall ;;
+        mode)    cmd_mode "$@" ;;
+        apply)
+            have fc-list && settings_set ui_font "$(detect_ui_font)"
+            apply_mode "$(current_mode)" "${1:-}"
+            ;;
+        status)  echo "$(mode_display_name "$(current_mode)") ($(current_mode))" ;;
+        logout)  cmd_logout ;;
+        help)    usage ;;
+        *)       usage; exit 1 ;;
+    esac
+}
+
+main "$@"

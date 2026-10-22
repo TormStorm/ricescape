@@ -1,0 +1,14 @@
+{
+  "mode": "unranked",
+  "name": "Unranked Group Ironman",
+  "bg": "#16301C",
+  "accent": "#3E7B4A",
+  "panel": "#2F3A2C",
+  "panel_dark": "#222B20",
+  "border_light": "#56684F",
+  "border_dark": "#121A10",
+  "helm": "#4F9A5D",
+  "helm_shade": "#24452B",
+  "logo_type": "file",
+  "logo": "helm"
+}

@@ -1,0 +1,14 @@
+{
+  "mode": "group",
+  "name": "Group Ironman",
+  "bg": "#14253D",
+  "accent": "#3A6EA5",
+  "panel": "#2E3440",
+  "panel_dark": "#222833",
+  "border_light": "#55607A",
+  "border_dark": "#12161E",
+  "helm": "#3A6EA5",
+  "helm_shade": "#1C3554",
+  "logo_type": "file",
+  "logo": "helm"
+}
