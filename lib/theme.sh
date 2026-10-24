@@ -51,7 +51,7 @@ build_palette_json() {
         --arg home "$HOME" --arg repo "$RS_REPO" --arg state "$RS_STATE" \
         '($base[0] * $mode[0] * $settings * {home: $home, repo: $repo, state: $state})
          | .icon_path = "\($repo)/assets/icons/\(.icon).txt"
-         | .logo_path = "\($state)/logo.txt"'
+         | .logo_path = "\($repo)/assets/fastfetch/\(.icon).txt"'
 }
 
 # Flattens palette JSON into KEY<TAB>VALUE lines, adding _hex/_rgb/_ansi
@@ -71,32 +71,6 @@ palette_vars() {
             printf '%s_ansi\t38;2;%s;%s;%s\n' "$key" "$r" "$g" "$b"
         fi
     done
-}
-
-# Turns a pixel sprite (assets/icons/*.txt) into a fastfetch logo:
-# two block characters per pixel, coloured with fastfetch's $1/$2/$3 markers.
-render_logo() {
-    local icon="$1" dest="$2" line out ch i cur
-    : >"$dest.tmp"
-    while IFS= read -r line; do
-        [[ -z $line || $line == \#* ]] && continue
-        out="" cur=""
-        for ((i = 0; i < ${#line}; i++)); do
-            ch="${line:i:1}"
-            case "$ch" in
-                A | B | C)
-                    # Emit a colour marker only when the colour changes.
-                    local n=$(( $(printf '%d' "'$ch") - 64 ))
-                    [[ $cur == "$n" ]] || out+="\$$n"
-                    cur="$n"
-                    out+='██'
-                    ;;
-                *) out+='  ' ;;
-            esac
-        done
-        printf '%s\n' "${out%"${out##*[! ]}"}" >>"$dest.tmp"
-    done <"$icon"
-    mv "$dest.tmp" "$dest"
 }
 
 # render_template SRC DEST  — replaces {{key}} placeholders.
@@ -176,10 +150,6 @@ apply_mode() {
     tmp="$(mktemp "$RS_STATE/.palette.XXXXXX")"
     printf '%s\n' "$RS_PALETTE" >"$tmp" && mv "$tmp" "$RS_STATE/palette.json"
     printf '%s\n' "$mode" >"$RS_STATE/mode"
-
-    local icon
-    icon="$(jq -r '.icon_path' <<<"$RS_PALETTE")"
-    [[ -f $icon ]] && render_logo "$icon" "$RS_STATE/logo.txt"
 
     render_all
     reload_apps "$mode"

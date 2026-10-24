@@ -79,7 +79,12 @@ binds {
 
     // Apps
     Mod+Return { spawn "kitty"; }
-    Mod+D { spawn "fuzzel"; }
+    // HUD panels (they also slide out when you push the mouse into their edge)
+    Mod+D { spawn "quickshell" "ipc" "call" "hud" "toggle" "inventory"; }
+    Mod+Grave { spawn "quickshell" "ipc" "call" "hud" "toggle" "chat"; }
+    Mod+Tab { spawn "quickshell" "ipc" "call" "hud" "toggle" "minimap"; }
+    Mod+P { spawn "quickshell" "ipc" "call" "hud" "pin" "all"; }
+    Mod+Shift+D { spawn "fuzzel"; }
     Mod+M { spawn "kitty" "--class" "ropes" "-e" "sh" "-c" "\"$HOME/.local/bin/ropes\" mode"; }
     Mod+Shift+M { spawn "sh" "-c" "\"$HOME/.local/bin/ropes\" mode --next"; }
     Mod+Escape { spawn "sh" "-c" "\"$HOME/.local/bin/ropes\" logout"; }

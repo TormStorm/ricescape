@@ -182,7 +182,7 @@ step_account_guide() {
     npc_say "Account Guide" \
         "Let me set up your account. I'll link the ricescape configs into place and put the 'ropes' command on your path."
 
-    mkdir -p "$HOME/.local/bin" "$HOME/.config"
+    mkdir -p "$HOME/.local/bin" "$HOME/.config" "$RS_USER_CONFIG"
     ln -sfn "$RS_REPO/bin/ropes" "$RS_BIN_LINK"
 
     info "Linking configs with stow"
@@ -221,9 +221,9 @@ step_account_guide() {
 
 step_brother_brace() {
     npc_say "Brother Brace" \
-        "Greetings. Let me teach you the quick prayers of this desktop. Super+Return opens a terminal, Super+D opens your inventory of apps, and Super+Q closes a window."
+        "Greetings. Let me teach you the quick prayers of this desktop. Your interface hides at the screen edges: push the mouse into the top-right, bottom-left or bottom-right corner to bring out the minimap, chatbox or inventory."
     npc_say "Brother Brace" \
-        "Super+Left and Super+Right scroll between columns, Super+1 to 9 switch worlds, Super+M lets you talk to the Ironman tutor, and Super+Escape opens the logout panel. Super+Shift+Slash shows every bind."
+        "Super+Return opens a terminal and Super+Q closes a window. Super+D opens your inventory, Super+Grave the chatbox console, Super+Tab the minimap, and Super+P pins them all. Super+M lets you talk to the Ironman tutor. Super+Shift+Slash shows every bind."
 }
 
 # --- Step 8: Ironman tutor -----------------------------------------------------

@@ -8,7 +8,10 @@
   "border_light": "#6B5E49",
   "border_dark": "#1A1610",
   "icon": "penguin",
-  "logo_1": "#505050",
+  "logo_1": "#5E5E5E",
   "logo_2": "#F2F2F2",
-  "logo_3": "#F08A1C"
+  "logo_3": "#F08A1C",
+  "parchment": "#D3C4A0",
+  "map": "#4F5A36",
+  "stone_active": "#6E2A1E"
 }

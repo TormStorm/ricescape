@@ -10,5 +10,8 @@
   "icon": "helm",
   "logo_1": "#E4E4E0",
   "logo_2": "#8A8A86",
-  "logo_3": "#E4E4E0"
+  "logo_3": "#E4E4E0",
+  "parchment": "#DEDCD6",
+  "map": "#8C8C88",
+  "stone_active": "#6E2A1E"
 }

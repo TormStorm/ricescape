@@ -19,6 +19,9 @@ awww                # wallpaper daemon (formerly swww)
 swaylock            # lock screen (until the Bank PIN lock is built)
 swayidle
 fastfetch
+btop                # opened from the CPU/RAM/GPU orbs
+papirus-icon-theme  # app icons in the inventory and stone tabs
+pacman-contrib      # checkupdates, for the Updates stone
 
 # Installer and theming tools
 gum
@@ -41,5 +44,6 @@ wl-clipboard
 
 # Fonts
 ttf-jetbrains-mono-nerd
+ttf-nerd-fonts-symbols  # HUD glyphs (Symbols Nerd Font)
 noto-fonts
 noto-fonts-emoji

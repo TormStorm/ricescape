@@ -1,13 +1,12 @@
-// Draws the current mode's pixel sprite (assets/icons/*.txt) in palette colours.
-// Penguin for Normal, Ironman helm for every Ironman mode.
+// The current mode's pixel sprite (assets/icons/*.txt) in palette colours:
+// a penguin for Normal, the Ironman helm for every Ironman mode.
 import QtQuick
-import Quickshell.Io
 
 Canvas {
     id: icon
 
-    property int pixel: 2          // screen pixels per sprite pixel
-    property var rows: []
+    property int pixel: 2
+    readonly property var rows: Theme.iconRows
 
     implicitWidth: (rows.length ? rows[0].length : 12) * pixel
     implicitHeight: (rows.length || 12) * pixel
@@ -20,13 +19,6 @@ Canvas {
     onC1Changed: requestPaint()
     onC2Changed: requestPaint()
     onC3Changed: requestPaint()
-
-    FileView {
-        path: Theme.iconPath
-        watchChanges: true
-        onFileChanged: reload()
-        onLoaded: icon.rows = text().split("\n").filter(l => l.length && l[0] !== "#")
-    }
 
     onPaint: {
         const ctx = getContext("2d");

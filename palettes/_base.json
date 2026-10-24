@@ -30,5 +30,10 @@
   "tagline": "I use Arch btw",
   "keyboard_layout": "us",
   "ui_font": "JetBrainsMono Nerd Font",
-  "mono_font": "JetBrainsMono Nerd Font"
+  "mono_font": "JetBrainsMono Nerd Font",
+  "chat_text": "#000000",
+  "chat_input": "#0000FF",
+  "chat_system": "#7F0000",
+  "icon_font": "Symbols Nerd Font",
+  "ui_scale": "1"
 }
